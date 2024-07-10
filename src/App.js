@@ -156,7 +156,7 @@ function Tasks({ tasks, tasksNumber, deletBtnHandler, clearAllHandler }) {
     </div>
 
     <div className=' h-96 p-5  mx-1 overflow-y-auto max-h-[55vh] dark-scrollbar'>
-      <ul className='grid grid-cols-3 gap-5 '>
+      <ul className='grid sm:grid-cols-3 gap-5 '>
         {tasks.map((task) => (<Task task={task} key={task.id} deletBtnHandler={deletBtnHandler} />))}
 
       </ul>
