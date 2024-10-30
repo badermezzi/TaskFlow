@@ -18,11 +18,11 @@ function App() {
     const id = new Date().getTime() + Math.round(Math.random() * 100000);
     const date = new Date(new Date().getTime() + 60 * 60 * 1000).toUTCString();
 
-    setTasks([{
+    setTasks([...tasks, {
       id: id,
       todo: newTask,
       date: date,
-    }, ...tasks])
+    }])
 
     setTasksNumber(tasks.length + 1);
 
@@ -152,7 +152,7 @@ function Tasks({ tasks, tasksNumber, deletBtnHandler, clearAllHandler }) {
 
     </div>
 
-    <div className=' h-96 p-5  mx-1 overflow-y-auto max-h-[55vh] dark-scrollbar'>
+    <div className=' h-96 p-5  mx-1 overflow-y-auto sm:max-h-[55vh] max-h-[80vh] dark-scrollbar'>
       <ul className='grid sm:grid-cols-3 gap-5 '>
         {tasks.map((task) => (<Task task={task} key={task.id} deletBtnHandler={deletBtnHandler} />))}
 
